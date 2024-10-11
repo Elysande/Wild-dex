@@ -1,7 +1,7 @@
-interface PokemonCard {
+/*interface PokemonCard {
   imgSrc: string;
   name: string;
-}
+}*/
 /*const pokemonList = [
   {
     name: "bulbasaur",
@@ -12,8 +12,14 @@ interface PokemonCard {
     name: "mew",
   },
 ];*/
+interface Pokemon {
+  pokemon: {
+    imgSrc?: string;
+    name: string;
+  };
+}
 
-function PokemonCard({ pokemon }) {
+function PokemonCard({ pokemon }: Pokemon) {
   return (
     <figure>
       {pokemon.imgSrc != null ? (
