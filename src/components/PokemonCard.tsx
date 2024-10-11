@@ -1,4 +1,8 @@
-const pokemonList = [
+interface PokemonCard {
+  imgSrc: string;
+  name: string;
+}
+/*const pokemonList = [
   {
     name: "bulbasaur",
     imgSrc:
@@ -7,17 +11,13 @@ const pokemonList = [
   {
     name: "mew",
   },
-];
+];*/
 
-function PokemonCard() {
-  const pokemon = {
-    image: pokemonList[1].imgSrc,
-    name: pokemonList[1].name,
-  };
+function PokemonCard({ pokemon }) {
   return (
     <figure>
-      {pokemon.image != null ? (
-        <img src={pokemon.image} alt="Bulbasaur" />
+      {pokemon.imgSrc != null ? (
+        <img src={pokemon.imgSrc} alt="Bulbasaur" />
       ) : (
         <p>???</p>
       )}
@@ -27,11 +27,3 @@ function PokemonCard() {
 }
 
 export default PokemonCard;
-
-/*function WeatherIcon() {
-  const weather = "sunny";
-
-  return <p>{weather === "sunny" ? "☀️" : "☁️"}</p>
-}
-
-export default WeatherIcon;*/
