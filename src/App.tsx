@@ -1,7 +1,7 @@
 import PokemonCard from "./components/PokemonCard";
 import "./App.css";
 import { useState } from "react";
-
+import NavBar from "./components/NavBar";
 const pokemonList = [
   {
     name: "bulbasaur",
@@ -35,24 +35,12 @@ function App() {
     <>
       <div>
         <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+        <NavBar
+          pokemonIndex={pokemonIndex}
+          setPokemonIndex={setPokemonIndex}
+          pokemonList={pokemonList}
+        />
       </div>
-      <button
-        type="button"
-        onClick={() => setPokemonIndex(pokemonIndex - 1)}
-        style={{ visibility: pokemonIndex === 0 ? "hidden" : "visible" }}
-      >
-        Précédent
-      </button>
-      <button
-        type="button"
-        onClick={() => setPokemonIndex(pokemonIndex + 1)}
-        style={{
-          visibility:
-            pokemonIndex === pokemonList.length - 1 ? "hidden" : "visible",
-        }}
-      >
-        Suivant
-      </button>
     </>
   );
 }
